@@ -1,4 +1,4 @@
-data class MathExpr(val leftHandNumber: Int,
+private data class MathExpr(val leftHandNumber: Int,
                     val opr: Char,
                     val rightHandNumber: Int) {
 
@@ -23,7 +23,7 @@ data class MathExpr(val leftHandNumber: Int,
     }
 }
 
-private fun parseExpression(expression: String) {
+fun parseExpression(expression: String): String {
     var curLeftHandNumber = ""
     var curOpr = ' '
     var curRightHandNumber = ""
@@ -66,10 +66,10 @@ private fun parseExpression(expression: String) {
         }
     }
 
-    println("result: $curLeftHandNumber") // result
+    return curLeftHandNumber // result
 }
 
 
 fun main() {
-    parseExpression("100+43+323-2343+343+3232-23243+2342302-2")
+    println(parseExpression("100+43+323-2343+343+3232-23243+2342302-2"))
 }
